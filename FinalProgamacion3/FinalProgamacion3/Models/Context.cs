@@ -25,5 +25,6 @@ namespace FinalProgamacion3.Models
         public DbSet<Facturacion> Facturacions { get; set; }
         public DbSet<Detalle_Factura> Detalle_Facturas { get; set; }
 
+        public System.Data.Entity.DbSet<FinalProgamacion3.Models.Categoriascs> Categoriascs { get; set; }
     }
 }

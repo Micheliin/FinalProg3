@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriascsController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EntradasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -4719,6 +4720,11 @@
     <Content Include="Views\Entradas\Details.cshtml" />
     <Content Include="Views\Entradas\Edit.cshtml" />
     <Content Include="Views\Entradas\Index.cshtml" />
+    <Content Include="Views\Categoriascs\Create.cshtml" />
+    <Content Include="Views\Categoriascs\Delete.cshtml" />
+    <Content Include="Views\Categoriascs\Details.cshtml" />
+    <Content Include="Views\Categoriascs\Edit.cshtml" />
+    <Content Include="Views\Categoriascs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
