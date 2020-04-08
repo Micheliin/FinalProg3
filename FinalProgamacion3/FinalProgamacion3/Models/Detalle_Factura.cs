@@ -8,16 +8,15 @@ using System.Data.Entity;
 
 namespace FinalProgamacion3.Models
 {
-    [Table("Facturacion")]
-    public class Facturacion
+    public class Detalle_Factura
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
-        public int IdCliente { get; set; }
-        public decimal TotalProducto { get; set; }
-        public decimal TotalPagado { get; set; }
-        public DateTime Fecha { get; set; }
-        public List<Detalle_Factura> Detalle_Facturas { get; set; }
+        public int IDFacturacion { get; set; }
+        public int Cantidad { get; set; }
+        public int ProductoId { get; set; }
+        public decimal Total { get; set; }
+        public Productos Productos { get; set; }
     }
 }
