@@ -20,6 +20,8 @@ namespace FinalProgamacion3.Models
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Proveedores> Proveedores { get; set; }
+        public virtual DbSet<Entradas> Entradas { get; set; }
+        public virtual DbSet<Stock> Stocks { get; set; }
 
     }
 }
