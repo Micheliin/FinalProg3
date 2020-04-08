@@ -16,6 +16,7 @@ namespace FinalProgamacion3.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
-
+        public List<Detalle_Factura> Detalle_Facturas { get; set; }
+        public Stock stock { get; set; }
     }
 }
