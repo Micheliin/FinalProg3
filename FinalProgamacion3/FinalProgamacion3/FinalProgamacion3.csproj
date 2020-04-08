@@ -147,9 +147,11 @@
       <DependentUpon>202004081646259_Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Categoriascs.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Entradas.cs" />
+    <Compile Include="Models\Facturacion.cs" />
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Stock.cs" />

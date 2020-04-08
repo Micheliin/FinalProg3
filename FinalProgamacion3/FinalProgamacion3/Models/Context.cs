@@ -22,6 +22,7 @@ namespace FinalProgamacion3.Models
         public virtual DbSet<Proveedores> Proveedores { get; set; }
         public virtual DbSet<Entradas> Entradas { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
+        
 
     }
 }
