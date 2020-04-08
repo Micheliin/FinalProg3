@@ -14,7 +14,7 @@ namespace FinalProgamacion3.Models
         [Key]
         public int IDClientes { get; set; }
         [Required]
-        public int RNC { get; set; }
+        public int RNC_Cedula { get; set; }
         [Required]
         public string Nombre { get; set; }
         [Required]
