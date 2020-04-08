@@ -13,12 +13,13 @@ namespace FinalProgamacion3.Models
         
     {
         public Context()
-           : base("name-Context")
+           : base("Context")
 
         {
         }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
+        public virtual DbSet<Proveedores> Proveedores { get; set; }
 
     }
 }

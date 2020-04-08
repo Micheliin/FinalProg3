@@ -8,6 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinalProgamacion3.Models
 {
+    [Table("Productos")]
     public class Productos
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
