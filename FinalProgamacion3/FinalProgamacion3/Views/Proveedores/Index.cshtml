@@ -17,7 +17,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="pdf">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.RNC_cedula)
@@ -54,6 +54,15 @@
                 @Html.ActionLink("Details", "Details", new { id = item.IDProveedores }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.IDProveedores })
             </td>
+        </tr>
+        
+        <tr>
+            <td>
+
+                <button onclick="generatePDF()" class="btn btn-primary">GUARDAR PDF</button>
+
+            </td>
+
         </tr>
     }
 

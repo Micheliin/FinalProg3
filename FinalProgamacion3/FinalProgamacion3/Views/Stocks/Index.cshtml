@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Stocks</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,20 +20,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDProductos)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDStock }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDStock }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDStock })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDProductos)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDStock }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDStock }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDStock })
+            </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td>
+
+                <button onclick="generatePDF()" class="btn btn-primary">GUARDAR PDF</button>
+
+            </td>
+
+        </tr>
+       
+    }
+
 
 </table>

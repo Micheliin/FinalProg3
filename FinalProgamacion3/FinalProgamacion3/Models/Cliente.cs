@@ -18,14 +18,20 @@ namespace FinalProgamacion3.Models
         public int RNC_Cedula { get; set; }
         [Required]
         public string Nombre { get; set; }
-        [Required]
-        public string Telefono { get; set; }
-        [RegularExpression(@"\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)*",
-            ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
-        public string Email { get; set; }
-        [StringLength(10)]
-        public string Categoria { get; set; }
 
+        [Required]
+        [RegularExpression(@"\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)*",
+            ErrorMessage = ".")]
+        public string Telefono { get; set; }
+       
+
+        [Required(ErrorMessage = "Email ID is Required")]
+        [DataType(DataType.EmailAddress)]
+        [MaxLength(50)]
+        [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage = "Incorrect Email Format")]
+        public string Email { get; set; }
+        public string Categoria { get; set; }
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ventas> Ventas { get; set; }
 

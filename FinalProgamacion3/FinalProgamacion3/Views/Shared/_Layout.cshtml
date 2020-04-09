@@ -70,11 +70,22 @@
                                     <ul class="nav child_menu">
 
 
-                                        <li><a href="@Url.Action("Index","Entrada")">Entrada de Mercancias</a></li>
-                                        <li><a href="@Url.Action("Index","Facturacion")">Facturacion</a></li>
-                                        <li><a href="@Url.Action("Index","Stock")">Facturacion</a></li>
+                                        <li><a href="@Url.Action("Index","Entradas")">Entrada de Mercancias</a></li>
+                                        <li><a href="@Url.Action("Index","Facturacions")">Facturacion</a></li>
+                                        <li><a href="@Url.Action("Index","Stocks")">Stocks - Inventario</a></li>
+                                        <li><a href="@Url.Action("Index","Ventas")">Ventas</a></li>
+
 
                                     </ul>
+                                </li>
+                                <li>
+                                <a><i class="fa fa-shopping-cart"></i> Consultas <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+
+
+                                    <li><a href="@Url.Action("Index","Consultas")">Consultas - Filtros</a></li>
+
+                                </ul>
                                 </li>
 
 
@@ -208,7 +219,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    Copyright © 2018 Jeam-Web Todos los derechos reservados.</a>
+                    <a>Copyright © 2018 Jeam-Web Todos los derechos reservados.</a>
                 </div>
                 <div class="clearfix"></div>
             </footer>
@@ -216,10 +227,26 @@
         </div>
 
     </div>
+
     @Scripts.Render("~/Content/js")
     @Scripts.Render("~/Template/js")
     @RenderSection("styles", required: false)
     @RenderSection("scripts", required: false)
 
+    <script src="~/Content/html2pdf.bundle.min.js"></script>
+
+    <script>function generatePDF () {
+        var element = document.getElementById('idpdf');
+        var opt = {
+            margin: 1,
+            filename: 'Reportes.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        html2pdf(element, opt);
+        }
+    </script>
 </body>
 </html>

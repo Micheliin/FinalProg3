@@ -11,107 +11,116 @@ using FinalProgamacion3.Models;
 
 namespace FinalProgamacion3.Controllers
 {
-    public class ClientesController : Controller
+    public class VentasController : Controller
     {
         private Context db = new Context();
 
-        // GET: Clientes
+        // GET: Ventas
         public async Task<ActionResult> Index()
         {
-            return View(await db.Clientes.ToListAsync());
+            var ventas = db.Ventas.Include(v => v.Productos);
+            return View(await ventas.ToListAsync());
         }
 
-        // GET: Clientes/Details/5
+        // GET: Ventas/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = await db.Clientes.FindAsync(id);
-            if (cliente == null)
+            Ventas ventas = await db.Ventas.FindAsync(id);
+            if (ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(ventas);
         }
 
-        // GET: Clientes/Create
+        // GET: Ventas/Create
         public ActionResult Create()
         {
+            ViewBag.IDClientes = new SelectList(db.Clientes, "IDClientes", "RNC_Cedula");
+            ViewBag.IDProductos = new SelectList(db.Productos, "IDProductos", "Nombre");
             return View();
         }
 
-        // POST: Clientes/Create
+        // POST: Ventas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "IDClientes,RNC_Cedula,Nombre,Telefono,Email,IDCategoria")] Cliente cliente)
+        public async Task<ActionResult> Create([Bind(Include = "IDVentas,Id,IDClientes,Cantidad,Fecha")] Ventas ventas)
         {
             if (ModelState.IsValid)
             {
-                db.Clientes.Add(cliente);
+                db.Ventas.Add(ventas);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(cliente);
+            ViewBag.IDClientes = new SelectList(db.Clientes, "IDClientes", "RNC_Cedula");
+            ViewBag.IDProductos = new SelectList(db.Productos, "IDProductos", "Nombre");
+            return View(ventas);
         }
 
-        // GET: Clientes/Edit/5
+        // GET: Ventas/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = await db.Clientes.FindAsync(id);
-            if (cliente == null)
+            Ventas ventas = await db.Ventas.FindAsync(id);
+            if (ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            ViewBag.IDClientes = new SelectList(db.Clientes, "IDClientes", "RNC_Cedula");
+            ViewBag.IDProductos = new SelectList(db.Productos, "IDProductos", "Nombre");
+            return View(ventas);
         }
 
-        // POST: Clientes/Edit/5
+        // POST: Ventas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "IDClientes,RNC,Nombre,Telefono,Email,IDCategoria")] Cliente cliente)
+        public async Task<ActionResult> Edit([Bind(Include = "IDVentas,Id,IDCliente,Cantidad,Fecha")] Ventas ventas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cliente).State = EntityState.Modified;
+                db.Entry(ventas).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(cliente);
+            ViewBag.IDClientes = new SelectList(db.Clientes, "IDClientes", "RNC_Cedula");
+            ViewBag.IDProductos = new SelectList(db.Productos, "IDProductos", "Nombre");
+            return View(ventas);
         }
 
-        // GET: Clientes/Delete/5
+        // GET: Ventas/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = await db.Clientes.FindAsync(id);
-            if (cliente == null)
+            Ventas ventas = await db.Ventas.FindAsync(id);
+            if (ventas == null)
             {
                 return HttpNotFound();
             }
-            return View(cliente);
+            return View(ventas);
         }
 
-        // POST: Clientes/Delete/5
+        // POST: Ventas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Cliente cliente = await db.Clientes.FindAsync(id);
-            db.Clientes.Remove(cliente);
+            Ventas ventas = await db.Ventas.FindAsync(id);
+            db.Ventas.Remove(ventas);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FinalProgamacion3.Models.Entradas>
+﻿@model IEnumerable<FinalProgamacion3.Models.Ventas>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +12,16 @@
 <table class="table" id="pdf">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Proveedores.Nombre)
+            @Html.DisplayNameFor(model => model.Productos.Nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha)
+            @Html.DisplayNameFor(model => model.IDClientes)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Cantidad)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IDProductos)
+            @Html.DisplayNameFor(model => model.Fecha)
         </th>
         <th></th>
     </tr>
@@ -30,25 +30,23 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Proveedores.Nombre)
+                @Html.DisplayFor(modelItem => item.Productos.Nombre)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
+                @Html.DisplayFor(modelItem => item.IDClientes)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cantidad)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IDProductos)
+                @Html.DisplayFor(modelItem => item.Fecha)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IDEntradas }) |
-                @Html.ActionLink("Details", "Details", new { id = item.IDEntradas }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IDEntradas })
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDVentas }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDVentas }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDVentas })
             </td>
-
         </tr>
-        
         <tr>
             <td>
 
@@ -57,9 +55,6 @@
             </td>
 
         </tr>
-
     }
 
 </table>
-
-

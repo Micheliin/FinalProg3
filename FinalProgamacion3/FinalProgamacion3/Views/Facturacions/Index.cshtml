@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="pdf">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Cliente.Nombre)
@@ -45,6 +45,14 @@
             @Html.ActionLink("Details", "Details", new { id=item.IDFacturacion }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.IDFacturacion })
         </td>
+    </tr>
+    <tr>
+        <td>
+
+            <button onclick="generatePDF()" class="btn btn-primary">GUARDAR PDF</button>
+
+        </td>
+
     </tr>
 }
 

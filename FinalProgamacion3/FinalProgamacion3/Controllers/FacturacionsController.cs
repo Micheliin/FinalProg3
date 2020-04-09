@@ -56,7 +56,7 @@ namespace FinalProgamacion3.Controllers
         {
             decimal monto = 0, descuento = 0, sumatoria = 0;
 
-            foreach (var item in db.Ventas.Where(c => c.IDCliente == facturacion.IDClientes))
+            foreach (var item in db.Ventas.Where(c => c.IDClientes == facturacion.IDClientes))
                 sumatoria += item.Cantidad * db.Productos.SingleOrDefault(p => p.Id == item.Id).Precio;
 
             descuento = facturacion.descuento(sumatoria, db.Clientes.SingleOrDefault(c => c.IDClientes == facturacion.IDClientes).Categoria);

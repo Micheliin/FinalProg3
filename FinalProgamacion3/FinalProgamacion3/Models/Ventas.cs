@@ -16,7 +16,7 @@ namespace FinalProgamacion3.Models
 
         public int? Id { get; set; }
 
-        public int? IDCliente { get; set; }
+        public int? IDClientes { get; set; }
 
         public int Cantidad { get; set; }
 

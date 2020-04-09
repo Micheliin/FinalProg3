@@ -13,7 +13,7 @@ namespace FinalProgamacion3.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int IDEntradas { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime? Fecha { get; set; }
         public int Cantidad { get; set; }
         public int IDProductos { get; set; }
         public int IDProveedores { get; set; }

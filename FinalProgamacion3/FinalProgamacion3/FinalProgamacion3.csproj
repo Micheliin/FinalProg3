@@ -130,12 +130,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\EntradasController.cs" />
     <Compile Include="Controllers\FacturacionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Controllers\StocksController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -195,6 +197,7 @@
     <Content Include="Content\docs\js\jquery.min.js" />
     <Content Include="Content\docs\js\shBrushXml.js" />
     <Content Include="Content\docs\js\shCore.js" />
+    <Content Include="Content\html2pdf.bundle.min %283%29.js" />
     <Content Include="Content\image\Facturación-Electrónica-Icono-1024x1024.png" />
     <Content Include="Content\production\calendar.html" />
     <Content Include="Content\production\chartjs.html" />
@@ -4719,16 +4722,22 @@
     <Content Include="Views\Entradas\Details.cshtml" />
     <Content Include="Views\Entradas\Edit.cshtml" />
     <Content Include="Views\Entradas\Index.cshtml" />
-    <Content Include="Views\Categoriascs\Create.cshtml" />
-    <Content Include="Views\Categoriascs\Delete.cshtml" />
-    <Content Include="Views\Categoriascs\Details.cshtml" />
-    <Content Include="Views\Categoriascs\Edit.cshtml" />
-    <Content Include="Views\Categoriascs\Index.cshtml" />
     <Content Include="Views\Facturacions\Create.cshtml" />
     <Content Include="Views\Facturacions\Delete.cshtml" />
     <Content Include="Views\Facturacions\Details.cshtml" />
     <Content Include="Views\Facturacions\Edit.cshtml" />
     <Content Include="Views\Facturacions\Index.cshtml" />
+    <Content Include="Views\Consultas\Productos.cshtml" />
+    <Content Include="Views\Consultas\Index.cshtml" />
+    <Content Include="Views\Consultas\Clientes.cshtml" />
+    <Content Include="Views\Consultas\Proveedores.cshtml" />
+    <Content Include="Views\Consultas\Entradas.cshtml" />
+    <Content Include="Views\Consultas\Facturaciones.cshtml" />
+    <Content Include="Views\Ventas\Create.cshtml" />
+    <Content Include="Views\Ventas\Delete.cshtml" />
+    <Content Include="Views\Ventas\Details.cshtml" />
+    <Content Include="Views\Ventas\Edit.cshtml" />
+    <Content Include="Views\Ventas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
