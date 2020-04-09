@@ -157,6 +157,7 @@
     <Compile Include="Models\Productos.cs" />
     <Compile Include="Models\Proveedores.cs" />
     <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\Ventas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -4728,7 +4729,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Procesos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

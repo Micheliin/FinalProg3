@@ -7,6 +7,7 @@
     {
         public override void Up()
         {
+           
             CreateTable(
                 "dbo.Clientes",
                 c => new
@@ -18,7 +19,15 @@
                         Email = c.String(),
                     })
                 .PrimaryKey(t => t.IDClientes);
-            
+
+
+            DropPrimaryKey("dbo.GameSummary", new[] { "Id" });
+            DropColumn("dbo.GameSummary", "Id");
+            AddColumn("dbo.GameSummary", "IdProductos", c => c.Int(nullable: false, identity: true));
+            AddPrimaryKey("dbo.GameSummary", "IDProductos");
+
+
+
             CreateTable(
                 "dbo.Productos",
                 c => new

@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalProgamacion3.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FinalProgamacion3.Controllers
 {
@@ -51,14 +53,29 @@ namespace FinalProgamacion3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "IDEntradas,Fecha,Cantidad,IDProductos,IDProveedores")] Entradas entradas)
         {
+            var existenciaStock = db.Stocks.SingleOrDefault(s => s.IDProductos == entradas.IDProductos);
+
             if (ModelState.IsValid)
             {
+                if (existenciaStock != null)
+                    db.Stocks.SingleOrDefault(s => s.IDStock == existenciaStock.IDStock).Cantidad += entradas.Cantidad;
+
+                else
+                    db.Stocks.Add(new Stock()
+                    {
+                        Cantidad = entradas.Cantidad,
+                        IDProductos = entradas.IDProductos
+
+                    });
+                entradas.Fecha = DateTime.Now;
                 db.Entradas.Add(entradas);
                 await db.SaveChangesAsync();
+
                 return RedirectToAction("Index");
             }
 
             ViewBag.IDProveedores = new SelectList(db.Proveedores, "IDProveedores", "Nombre", entradas.IDProveedores);
+            ViewBag.IDProducto = new SelectList(db.Productos, "IDProductos", "Nombre", entradas.IDProductos);
             return View(entradas);
         }
 

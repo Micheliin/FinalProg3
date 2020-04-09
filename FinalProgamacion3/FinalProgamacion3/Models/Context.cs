@@ -22,9 +22,10 @@ namespace FinalProgamacion3.Models
         public virtual DbSet<Proveedores> Proveedores { get; set; }
         public virtual DbSet<Entradas> Entradas { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
-        public DbSet<Facturacion> Facturacions { get; set; }
+        public DbSet<Facturacion> Facturacion { get; set; }
         public DbSet<Detalle_Factura> Detalle_Facturas { get; set; }
 
         public System.Data.Entity.DbSet<FinalProgamacion3.Models.Categoriascs> Categoriascs { get; set; }
+
     }
 }

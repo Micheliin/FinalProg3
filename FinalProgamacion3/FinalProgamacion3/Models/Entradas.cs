@@ -20,6 +20,20 @@ namespace FinalProgamacion3.Models
 
         public Productos Productos { get; set; }
         public Proveedores Proveedores { get; set; }
-       
+
+        public int conteo(List<Entradas> list)
+        {
+            return list.Count;
+        }
+        public int sumatoria(List<Entradas> list)
+        {
+            return list.Sum(e => e.Cantidad);
+        }
+
+        public double promedio(List<Entradas> list)
+        {
+            return list.Sum(e => e.Cantidad) / list.Count;
+        }
+
     }
 }
