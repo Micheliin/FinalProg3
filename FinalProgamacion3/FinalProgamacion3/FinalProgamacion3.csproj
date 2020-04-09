@@ -129,9 +129,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CategoriascsController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\EntradasController.cs" />
+    <Compile Include="Controllers\FacturacionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
@@ -148,10 +148,8 @@
       <DependentUpon>202004081646259_Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Categoriascs.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
-    <Compile Include="Models\Detalle_Factura.cs" />
     <Compile Include="Models\Entradas.cs" />
     <Compile Include="Models\Facturacion.cs" />
     <Compile Include="Models\Productos.cs" />
@@ -4726,6 +4724,11 @@
     <Content Include="Views\Categoriascs\Details.cshtml" />
     <Content Include="Views\Categoriascs\Edit.cshtml" />
     <Content Include="Views\Categoriascs\Index.cshtml" />
+    <Content Include="Views\Facturacions\Create.cshtml" />
+    <Content Include="Views\Facturacions\Delete.cshtml" />
+    <Content Include="Views\Facturacions\Details.cshtml" />
+    <Content Include="Views\Facturacions\Edit.cshtml" />
+    <Content Include="Views\Facturacions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

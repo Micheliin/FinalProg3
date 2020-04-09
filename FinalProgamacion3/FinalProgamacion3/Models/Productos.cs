@@ -25,8 +25,7 @@ namespace FinalProgamacion3.Models
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-        public List<Detalle_Factura> Detalle_Facturas { get; set; }
-
+     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ventas> Ventas { get; set; }
 
